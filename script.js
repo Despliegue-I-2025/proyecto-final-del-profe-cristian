@@ -2,7 +2,7 @@
 
 // Funciones que llaman a los endpoints en Vercel
 async function a2rRemote(n) {
-    const url = `/api/a2r?number=${encodeURIComponent(n)}`;
+    const url = `/a2r?number=${encodeURIComponent(n)}`;
     const res = await fetch(url);
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || "Error desconocido");
@@ -10,7 +10,7 @@ async function a2rRemote(n) {
 }
 
 async function r2aRemote(roman) {
-    const url = `/api/r2a?roman=${encodeURIComponent(roman)}`;
+    const url = `/r2a?roman=${encodeURIComponent(roman)}`;
     const res = await fetch(url);
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || "Error desconocido");
